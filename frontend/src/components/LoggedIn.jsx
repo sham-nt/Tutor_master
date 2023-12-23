@@ -1,13 +1,14 @@
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
+import Form from "./Form";
 
 export default function LoggedIn() {
   const { user, logout } = useKindeAuth();
-  
-  // we can fetch user given name, family name, email and id token 
   return (
-    <>
-      <h1>Welcome {user.given_name} {user.family_name} {user.email}</h1>
+    <div>
+      <h1>Welcome to Tutor Master, {user.given_name}</h1>
+      <br />
+      <Form />
       <button onClick={logout}>Logout</button>
-    </>
+    </div>
   );
 }
